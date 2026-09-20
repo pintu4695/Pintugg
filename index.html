@@ -1,129 +1,861 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <base href="$FLUTTER_BASE_HREF" />
+<html lang="en">
+<head>
 
-    <meta charset="UTF-8" />
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="A new Flutter project." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- iOS meta tags & icons -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="persistent_project" />
-    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+<title>Work From Home Job</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>groceryshop</title>
-    <link rel="manifest" href="manifest.json" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-      body {
-        background: #000;
-        margin: 0;
-        overflow: hidden;
-      }
 
-      #loading-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-      }
+<style>
 
-      .loader {
-        border: 6px solid rgba(255, 255, 255, 0.2);
-        border-top: 6px solid #87ceeb;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        animation: spin 1s linear infinite;
-      }
+/* =========================
+   RESET
+========================= */
 
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-  </head>
-  <body
-    style="
-      background-color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    "
-  >
-    <!-- Loader Container -->
-    <div id="loading-container">
-      <div class="loader"></div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,255,255,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #075fa3 0%,
+            #0b82d4 48%,
+            #18bd4a 100%
+        );
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.sio-main-container {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 14px;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.sio-landing-wrap {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 30px 22px 24px;
+
+    background: rgba(255,255,255,.98);
+
+    border-radius: 24px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.18),
+        0 5px 15px rgba(0,0,0,.08);
+}
+
+
+/* Top Gradient Line */
+
+.sio-landing-wrap::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0b6eb8,
+            #18c13d
+        );
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.sio-profile {
+
+    margin: 5px 0 22px;
+}
+
+
+/* Badge */
+
+.sio-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-bottom: 15px;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    background: #eef8ff;
+
+    color: #0b6eb8;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .2px;
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.sio-avatar {
+
+    width: 135px;
+    height: 135px;
+
+    margin: 0 auto 16px;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b6eb8,
+            #18c13d
+        );
+
+    box-shadow:
+        0 8px 25px rgba(11,110,184,.28),
+        0 0 0 5px rgba(255,255,255,.85);
+}
+
+
+.sio-avatar img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #fff;
+}
+
+
+/* =========================
+   HEADLINE
+========================= */
+
+.sio-headline {
+
+    max-width: 360px;
+
+    margin: 0 auto;
+
+    color: #18a83c;
+
+    font-size: 24px;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.sio-btn {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 55px;
+
+    padding: 15px 18px;
+
+    margin: 16px 0;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b6eb8,
+            #087fd0
+        );
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: .2px;
+
+    box-shadow:
+        0 8px 20px rgba(11,110,184,.28);
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* Button Shine */
+
+.sio-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 70%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.28),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    animation: sio-shine 3s infinite;
+}
+
+
+/* Button Hover */
+
+.sio-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(11,110,184,.38);
+}
+
+
+.sio-btn:active {
+
+    transform: scale(.98);
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.sio-features {
+
+    margin-top: 18px;
+}
+
+
+/* Feature Box */
+
+.sio-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    width: 100%;
+
+    padding: 12px 13px;
+
+    margin: 9px 0;
+
+    text-align: left;
+
+    background: #f8fafc;
+
+    border: 1px solid #edf0f3;
+
+    border-radius: 13px;
+}
+
+
+/* Tick */
+
+.sio-tick {
+
+    flex: 0 0 27px;
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f8ec;
+
+    color: #18a83c;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+/* Feature Text */
+
+.sio-feature p {
+
+    color: #30343b;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.sio-highlight {
+
+    margin: 17px 0;
+
+    padding: 13px 12px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef8ff,
+            #f1fff4
+        );
+
+    border: 1px solid #dcefe4;
+
+    color: #0871b9;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.sio-disclaimer {
+
+    margin-top: 18px;
+
+    padding: 9px 8px 0;
+
+    color: #777;
+
+    font-size: 10.5px;
+
+    line-height: 1.6;
+}
+
+
+.sio-disclaimer b {
+
+    color: #087a3b;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes sio-shine {
+
+    0% {
+        left: -100%;
+    }
+
+    45%,
+    100% {
+        left: 140%;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .sio-main-container {
+
+        min-height: 100svh;
+
+        padding: 12px 8px;
+    }
+
+
+    .sio-landing-wrap {
+
+        max-width: 100%;
+
+        padding: 25px 14px 20px;
+
+        border-radius: 21px;
+    }
+
+
+    /* Bigger Mobile Image */
+
+    .sio-avatar {
+
+        width: 125px;
+        height: 125px;
+
+        padding: 5px;
+
+        margin-bottom: 15px;
+
+        box-shadow:
+            0 8px 25px rgba(11,110,184,.30),
+            0 0 0 4px rgba(255,255,255,.9);
+    }
+
+
+    .sio-profile {
+
+        margin: 5px 0 19px;
+    }
+
+
+    .sio-badge {
+
+        font-size: 10.5px;
+
+        padding: 6px 11px;
+
+        margin-bottom: 14px;
+    }
+
+
+    .sio-headline {
+
+        max-width: 330px;
+
+        font-size: 21px;
+
+        line-height: 1.3;
+    }
+
+
+    .sio-btn {
+
+        min-height: 51px;
+
+        padding: 13px 14px;
+
+        margin: 13px 0;
+
+        font-size: 13.5px;
+    }
+
+
+    .sio-features {
+
+        margin-top: 15px;
+    }
+
+
+    .sio-feature {
+
+        gap: 9px;
+
+        padding: 10px;
+
+        margin: 7px 0;
+
+        border-radius: 11px;
+    }
+
+
+    .sio-tick {
+
+        flex-basis: 24px;
+
+        width: 24px;
+        height: 24px;
+
+        font-size: 13px;
+    }
+
+
+    .sio-feature p {
+
+        font-size: 12.5px;
+
+        line-height: 1.4;
+    }
+
+
+    .sio-highlight {
+
+        margin: 14px 0;
+
+        padding: 11px 9px;
+
+        font-size: 12.5px;
+    }
+
+
+    .sio-disclaimer {
+
+        margin-top: 14px;
+
+        padding-top: 6px;
+
+        font-size: 9.5px;
+
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+
+    .sio-main-container {
+
+        padding: 9px 6px;
+    }
+
+
+    .sio-landing-wrap {
+
+        padding: 22px 12px 18px;
+
+        border-radius: 19px;
+    }
+
+
+    .sio-avatar {
+
+        width: 115px;
+        height: 115px;
+    }
+
+
+    .sio-headline {
+
+        font-size: 19px;
+    }
+
+
+    .sio-feature p {
+
+        font-size: 11.5px;
+    }
+
+
+    .sio-btn {
+
+        min-height: 49px;
+
+        font-size: 12.5px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="sio-main-container">
+
+    <div class="sio-landing-wrap">
+
+
+        <!-- =========================
+             PROFILE
+        ========================== -->
+
+        <div class="sio-profile">
+
+            <div class="sio-badge">
+                ✓ WORK FROM HOME OPPORTUNITY
+            </div>
+
+
+            <div class="sio-avatar">
+
+                <img
+                    src="https://i.ibb.co/KjrBVv9h/mr88-B4-MCQeolto-Xob-M9-JEe-Eyn-ZMn-Bj-FMz-Ac0-SMDAi-h-Ff1-Qg-RBAkl-Xo7yo-Kxe-N-POtqpyfq-Ow-Kv-VPc-Ao-I-I.jpg"
+                    alt="Work From Home"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="sio-headline">
+                Work From Home Handwriting Job
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             TOP CTA
+        ========================== -->
+
+        <a
+            class="sio-btn"
+            href="https://t.me/+ZG70JxagkSw1ZWJl"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            JOIN TELEGRAM CHANNEL 🚀
+        </a>
+
+
+
+        <!-- =========================
+             FEATURES
+        ========================== -->
+
+        <div class="sio-features">
+
+
+            <div class="sio-feature">
+
+                <div class="sio-tick">
+                    ✓
+                </div>
+
+                <p>
+                    Simple Writing Work – No Experience Needed
+                </p>
+
+            </div>
+
+
+
+            <div class="sio-feature">
+
+                <div class="sio-tick">
+                    ✓
+                </div>
+
+                <p>
+                    Earn ₹15,000 – ₹30,000 Per Month
+                </p>
+
+            </div>
+
+
+
+            <div class="sio-feature">
+
+                <div class="sio-tick">
+                    ✓
+                </div>
+
+                <p>
+                    Work From Home • Flexible Timing
+                </p>
+
+            </div>
+
+
+
+            <div class="sio-highlight">
+                🚀 Limited Seats Available – Apply Today!
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             BOTTOM CTA
+        ========================== -->
+
+        <a
+            class="sio-btn"
+            href="https://t.me/+ZG70JxagkSw1ZWJl"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            JOIN TELEGRAM CHANNEL 🚀
+        </a>
+
+
+
+        <!-- =========================
+             DISCLAIMER
+        ========================== -->
+
+        <div class="sio-disclaimer">
+
+            <b>Note:</b>
+
+            This is project-based work.
+            Earnings depend on performance and
+            submission quality.
+
+        </div>
+
+
     </div>
 
-    <script src="flutter.js" defer></script>
+</div>
 
-    <script>
-      var scriptLoaded = false;
 
-      function loadMainDartJs() {
-        if (scriptLoaded) return;
-        scriptLoaded = true;
-        var scriptTag = document.createElement("script");
-        scriptTag.src = "main.dart.js";
-        scriptTag.type = "application/javascript";
-        document.body.appendChild(scriptTag);
-      }
 
-      function removeLoader() {
-        var loader = document.getElementById("loading-container");
-        if (loader) {
-          loader.style.display = "none";
-        }
-      }
+<!-- =========================
+     META PIXEL
+========================== -->
 
-      window.addEventListener("flutter-first-frame", function () {
-        removeLoader();
-        window.parent.postMessage({ type: "LOADING_COMPLETED", }, "*");
-      });
+<script>
 
-      loadMainDartJs();
-    </script>
+!function(f,b,e,v,n,t,s)
+{
+    if(f.fbq)return;
 
-    <script>
-      // Navigation tracking
-      (function (history) {
-        const pushState = history.pushState;
-        const replaceState = history.replaceState;
+    n=f.fbq=function()
+    {
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) :
+        n.queue.push(arguments)
+    };
 
-        function logNavigation(method, url) {
-          // console.log(`[IN FLUTTER APP] - Navigated (${method}): ${url}`);
-          window.parent.postMessage({ type: "NAVIGATION", method, url }, "*");
-        }
+    if(!f._fbq)
+        f._fbq=n;
 
-        history.pushState = function (state, title, url) {
-          logNavigation("pushState", url);
-          return pushState.apply(history, arguments);
-        };
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
 
-        history.replaceState = function (state, title, url) {
-          logNavigation("replaceState", url);
-          return replaceState.apply(history, arguments);
-        };
+    n.queue=[];
 
-        window.addEventListener("popstate", function (event) {
-          logNavigation("popstate", location.href);
-        });
-      })(window.history);
-    </script>
-  </body>
+    t=b.createElement(e);
+    t.async=!0;
+
+    t.src=v;
+
+    s=b.getElementsByTagName(e)[0];
+
+    s.parentNode.insertBefore(t,s)
+
+}
+(window, document, 'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '3280963472095435');
+
+fbq('track', 'PageView');
+
+</script>
+
+
+<noscript>
+
+<img
+    height="1"
+    width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=3280963472095435&ev=PageView&noscript=1"
+/>
+
+</noscript>
+
+
+</body>
 </html>
